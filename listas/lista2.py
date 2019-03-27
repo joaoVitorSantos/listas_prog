@@ -22,13 +22,26 @@ def excesso_peso_peixes(peso_peixes_kg, peso_limite):
     o peso em excesso, ou zero se não houver'''
 
     peso_excesso = peso_peixes_kg - peso_limite
-    return peso_excesso
+
+    if peso_excesso < 0:
+        return 0
+    else:
+        return round(peso_excesso, 2)
 
 
 def testa_lados(a, b, c):
     ''' Receba os três lados de um triângulo. Informe se os valores
     podem ser um triângulo. Indique, caso os lados formem um triângulo,
     se o mesmo é: equilátero, isósceles ou escaleno. '''
+
+    if a + b < c:
+        return 'Não forma um triângulo'
+    elif b + c < a:
+        return 'Não forma um triângulo'
+    elif a + c < b:
+        return 'Não forma um triângulo'
+    elif a == b and a==c:
+        return 'Triângulo equilátero'
 
 
 def ano_bissexto(ano):
