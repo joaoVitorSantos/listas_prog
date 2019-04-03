@@ -42,15 +42,39 @@ def testa_lados(a, b, c):
         return 'Não forma um triângulo'
     elif a == b and a==c:
         return 'Triângulo equilátero'
+    elif a==b and a!=c:
+        return 'Triângulo isósceles'
+    elif b==c and b!=a:
+        return 'Triângulo isósceles'
+    elif a==c and a!=b:
+        return 'Triângulo isósceles'
+    elif a!=b and a!=c and b!=c:
+        return 'Triângulo escaleno'
+
 
 
 def ano_bissexto(ano):
     ''' Determine se um ano é bissexto'''
 
+    if ano%4 == 0:
+        if ano%100 != 0:
+            return True
+        elif ano%100 == 0:
+            if ano%400 == 0:
+                return True
+            else:
+                return False
+    else:
+        return False
+
+
+
+
 
 def data_valida(data):
     '''Valida data. Recebe uma string no formato dd/mm/aaaa e informa
     um valor lógico indicando se a data é válida ou não.'''
+    
 
 
 def maior3(a, b, c):
